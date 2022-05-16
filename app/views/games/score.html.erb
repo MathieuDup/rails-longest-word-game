@@ -1,0 +1,15 @@
+<h1>Result</h1>
+
+<br>
+
+<% if @included %>
+    <% if @word["found"] == true %>
+    <p>Congratulations ! <strong><%= @answer.upcase%></strong> is  <%= @answer.size%> letters long.</p>
+    <% else %>
+    <p> <strong><%= @answer.upcase %></strong> is not an english word</p>
+    <% end %>
+  <% else %>
+  <p>Sorry but <strong><%= @answer.upcase %></strong> is not a word from <%= @letters %></p>
+  <% end %>
+
+<%= link_to "Play again", "/new" %>
